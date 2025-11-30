@@ -60,13 +60,13 @@ label {
   font-weight: bold;
 }
 
-input {
+/* input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-}
+} */
 
 input:focus {
   border-color: #007BFF;
@@ -95,4 +95,48 @@ input:focus {
 .submit-btn:hover {
   background-color: #0056b3;
 }
+
+
+
+
+
+/* match pair game */
+.game-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 20px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.card {
+  width:80px;
+  height: 80px;
+  background-color: #ccc;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.card.matched {
+  background-color: #8bc34a;
+  cursor: default;
+}
+
+.card.revealed {
+  background-color: #fff;
+}
+
+
+
+
 

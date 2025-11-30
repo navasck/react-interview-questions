@@ -1,0 +1,81 @@
+/* Basic styles (you might put these in a global CSS or utility classes) */
+.AppHeader { /* Note: Using camelCase for JS access or keeping kebab-case and accessing as styles['app-header'] */
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.AppHeader h1, .AppHeader p {
+  margin: 0 0 10px 0;
+  color:red
+}
+
+/* THE CORE CSS FOR THE RESPONSIVE GRID - NOW MODULE-SCOPED
+   ========================================================
+*/
+.gridContainer { /* This will be accessed as styles.gridContainer in JSX */
+  display: grid;
+  /* This is the magic line for responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  /* grid-template-columns: repeat(3, 1fr); Default to 3 columns */
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+   /* Responsive columns */
+  gap: 20px; /* Space between grid items */
+  /* padding: 20px;  */
+  /* Padding around the grid */
+  padding: clamp(20px, 5vw, 50px); /* Responsive padding */
+  max-width: 1200px; /* Max width for the grid to keep it centered */
+  margin: 0 auto; /* Center the grid container */
+}
+
+.gridItem { /* This will be accessed as styles.gridItem in JSX */
+  /* background-color: #ffffff; */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* padding: 20px; */
+  padding: clamp(20px, 5vw, 50px); /* Responsive padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes button to bottom */
+  text-align: center;
+  min-height: 200px; /* Ensures some consistent height */
+  color: #333; /* Ensure text color is readable against background */
+}
+
+/* .gridItem h2 {
+  margin-top: 0;
+  color: #2c3e50;
+} */
+
+:is(.gridItem) h2{
+  margin-top: 0;
+  color: #000;
+}
+
+.gridItem p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  flex-grow: 1; /* Allows paragraph to take up available space */
+}
+
+.gridItem button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.gridItem button:hover {
+  background-color: #0056b3;
+}
+
+/* You generally don't put global body/html styles here.
+   Those would go in `styles/globals.css`
+*/
